@@ -15,9 +15,9 @@ titles = []
 themes = []
 posttimes = []
 ids = []
+url = 'https://habrahabr.ru/'
 for i in range(1,4):
-	url = 'https://habrahabr.ru/' + 'page' + str(i)
-	page = requests.get(url)
+	page = requests.get(url + 'page' + str(i))
 	tree = html.fromstring(page.content)
 
 	titles = titles + tree.cssselect('a.post__title_link')
@@ -32,7 +32,10 @@ import csv
 with open(filename, 'a', newline='') as fp: #используем a вместо w для добавления в конец файла
     a = csv.writer(fp, delimiter=';')
     for i in range(len(titles)):
-    	a.writerow([themes[i].text_content(), posttimes[i].text_content().lstrip().rstrip(), titles[i].text_content(), 'https://habrahabr.ru/' + ids[i].attrib['id'].replace('_', '/')])
+    	a.writerow([themes[i].text_content(),
+    		posttimes[i].text_content().lstrip().rstrip(),
+    		titles[i].text_content(), 
+    		url + ids[i].attrib['id'].replace('_', '/')])
 
 text_file = "habr.html"
 # opening the file with w+ mode truncates the file
