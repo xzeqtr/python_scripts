@@ -40,14 +40,15 @@ def string_print(string_line):
 
 
 def char_select_print(string_line):
-    strings = string.printable[:-6]
+    print(string_line)
+    strings = string.printable[-36:-6]
     full = []
     for ch in string_line:
-        for i in range(3, random.randint(3, 6)):
+        for i in range(1, random.randint(2, 5)):
             rand_char = strings[random.randint(0, len(strings) - 1)]
             sys.stdout.write('\r' + ''.join(full) + rand_char)
             sys.stdout.flush()
-            sleep(random.randint(2, 3) / 15)
+            sleep(random.randint(1, 3) / 15)
         full.append(ch)
         sys.stdout.write('\r' + ''.join(full))
         sys.stdout.flush()
@@ -59,5 +60,5 @@ def char_print(string_line):
         sleep(random.random() / 10)
 
 
-char_select_print("sdrgs afr ser f ersefres rfs er gsr ser f ersef\
+char_select_print("sdrgs afr ser f ersefres rfs er gsr ser f ersef \
     res rfs er gser gserr ser f ersefres rfs er gser gserer gserea sse")
