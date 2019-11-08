@@ -40,19 +40,17 @@ def string_print(string_line):
 
 
 def char_select_print(string_line):
-    strings = list(string.printable[:-6])
-    # strlen = len(strings) - 1
+    strings = string.printable[:-6]
     full = []
     for ch in string_line:
-        if ch in strings:
-            for i in range(5, random.randint(6, 15)):
-                rand_char = strings.pop(random.randint(0, len(strings) - 1))
-                sleep(random.randint(1, 3) / 20)
-                sys.stdout.write('\r' + ''.join(full) + rand_char)
-                sys.stdout.flush()
-            full.append(rand_char)
-        else:
-            full.append(ch)
+        for i in range(3, random.randint(3, 6)):
+            rand_char = strings[random.randint(0, len(strings) - 1)]
+            sys.stdout.write('\r' + ''.join(full) + rand_char)
+            sys.stdout.flush()
+            sleep(random.randint(2, 3) / 15)
+        full.append(ch)
+        sys.stdout.write('\r' + ''.join(full))
+        sys.stdout.flush()
 
 
 def char_print(string_line):
@@ -61,8 +59,5 @@ def char_print(string_line):
         sleep(random.random() / 10)
 
 
-char_select_print("sdrgs er gsrt rtGRTG rTG sr er gsrt rtGRTG r gsrt rtGRTG rTG k\
-    er gsrt rtGRTG rTG er gsrr gsrt rtGRTG rTG er gsrt rtGRTG rTG er gsrr \
-    gsrt rtGRTG rTG er gsrt rtGRTG rTG er gsrr gsrt rtGRTG rTG er gsrt rtG\
-    TG rTG er gsrrTG er gsrt rtGRTG rTG er gsrt rtGRTG rTG er gsrt rtGRTGr\
-    TG er gsrt rtGRTG rTGTr")
+char_select_print("sdrgs afr ser f ersefres rfs er gsr ser f ersef\
+    res rfs er gser gserr ser f ersefres rfs er gser gserer gserea sse")
