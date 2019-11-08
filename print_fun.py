@@ -40,14 +40,12 @@ def string_print(string_line):
 
 
 def char_select_print(string_line):
-    strings = list(string.printable[10:-38])
+    strings = list(string.printable[:-6])
     # strlen = len(strings) - 1
     full = []
     for ch in string_line:
-        strings = list(string.printable[10:-38])
-        rand_char = ''
         if ch in strings:
-            while rand_char != ch:
+            for i in range(5, random.randint(6, 15)):
                 rand_char = strings.pop(random.randint(0, len(strings) - 1))
                 sleep(random.randint(1, 3) / 20)
                 sys.stdout.write('\r' + ''.join(full) + rand_char)
