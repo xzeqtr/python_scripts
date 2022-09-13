@@ -11,7 +11,7 @@ update_progress(34)
 
 k = 210
 
-for i in range(k):
+for i in range(k+1):
     time.sleep(0.01)
     n = i * 100 // k
     sys.stdout.write('\r[{0}{1}] {2}%  {3} of {4}'.format(

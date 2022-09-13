@@ -60,5 +60,4 @@ def char_print(string_line):
         sleep(random.random() / 10)
 
 
-char_select_print("sdrgs afr ser f ersefres rfs er gsr ser f ersef \
-    res rfs er gser gserr ser f ersefres rfs er gser gserer gserea sse")
+char_select_print("The quick brown fox jumps over the lazy dog")

@@ -6,4 +6,4 @@ def ping(host):
     response = system_call(['ping', param, '1', host])
     return response
 
-print(ping('192.168.125.221'))
+print(ping('192.168.0.1'))
